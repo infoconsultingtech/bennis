@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // -- AJOUT -- : Écouteur pour fermer la modale si on clique sur le fond noir
             modal.addEventListener('click', (event) => {
-                // Si l'élément cliqué est le fond de la modale lui-même
+                // Si l'élément cliqué est le fond de la modale lui-même (test)
                 if (event.target === modal) {
                     closeModal();
                 }
