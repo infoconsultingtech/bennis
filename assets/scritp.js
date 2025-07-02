@@ -90,8 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
-
-        // ======== SCRIPT POUR SECTION VISUALISATION 3D (Animation + Lightbox) ========
+// ======== SCRIPT POUR SECTION VISUALISATION 3D (Animation + Lightbox) ========
 document.addEventListener('DOMContentLoaded', function() {
     
     const animatedSection = document.querySelector('#visualisation');
@@ -113,15 +112,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // --- 2. Fonctionnalité de clic pour plein écran (Lightbox) ---
         const galleryImages = animatedSection.querySelectorAll('.gallery-img');
-        const modal = document.getElementById('imageModal'); // On récupère la modale existante
-        const modalImg = document.getElementById('modalImage'); // On récupère l'image de la modale existante
+        
+        // -- AJOUT -- : On récupère les éléments de la nouvelle lightbox que j'avais proposée
+        const modal = document.getElementById('lightbox-overlay'); // Utilise l'ID de la nouvelle lightbox
+        const modalImg = document.getElementById('lightbox-img');
+        const planBtn = document.getElementById('lightbox-plan-btn'); // Le bouton "VOIR LE PLAN 2D"
+        const closeModalBtn = document.getElementById('lightbox-close'); // Le bouton pour fermer
 
-        if (modal && modalImg) { // On vérifie que les éléments de la modale existent
+        // On vérifie que TOUS les éléments de la modale existent
+        if (modal && modalImg && planBtn && closeModalBtn) { 
+            
             galleryImages.forEach(img => {
-                img.addEventListener('click', () => {
-                    modal.style.display = 'flex'; // Affiche la modale
-                    modalImg.src = img.src; // Met la source de l'image cliquée dans la modale
+                img.addEventListener('click', (event) => {
+                    // -- MODIFIÉ -- : On utilise une classe pour afficher/cacher, c'est plus propre
+                    modal.classList.add('is-visible'); 
+                    
+                    // On récupère les informations de l'image cliquée
+                    const clickedImage = event.currentTarget;
+                    const imageSrc = clickedImage.getAttribute('src');
+                    const plan2dSrc = clickedImage.getAttribute('data-plan-2d'); // On récupère le lien du plan 2D
+                    
+                    // On met à jour le contenu de la modale
+                    modalImg.src = imageSrc; 
+                    planBtn.href = plan2dSrc; // -- AJOUT -- : On met à jour le lien du bouton "VOIR LE PLAN 2D"
                 });
+            });
+
+            // -- AJOUT -- : Fonction pour fermer la modale
+            function closeModal() {
+                modal.classList.remove('is-visible');
+            }
+
+            // -- AJOUT -- : Écouteur d'événement pour le bouton de fermeture (le 'X')
+            closeModalBtn.addEventListener('click', closeModal);
+
+            // -- AJOUT -- : Écouteur pour fermer la modale si on clique sur le fond noir
+            modal.addEventListener('click', (event) => {
+                // Si l'élément cliqué est le fond de la modale lui-même
+                if (event.target === modal) {
+                    closeModal();
+                }
             });
         }
     }

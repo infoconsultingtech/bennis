@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Groupe Benis - Immobilier de Prestige à Kénitra</title>
-    <meta name="description" content="Découvrez les meilleurs biens immobiliers neufs et de prestige à Kénitra avec Groupe Benis. Appartements, villas et locaux commerciaux.">
+    <title>Groupe bennis - Immobilier de Prestige à Kénitra</title>
+    <meta name="description" content="Découvrez les meilleurs biens immobiliers neufs et de prestige à Kénitra avec Groupe bennis. Appartements, villas et locaux commerciaux.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,7 @@
 <body>
 
     <header class="header">
-        <a href="#" class="logo"><img src="assets/images/logo.png" alt="" srcset="" width="90px"></a>
+        <a href="#" class="logo"><img src="assets/images/logo.png" alt="" srcset="" width="150px"></a>
         <nav class="navbar">
             <a href="#hero">Accueil</a>
             <a href="#a-propos">À Propos</a>
@@ -31,14 +31,16 @@
         <div id="menu-btn" class="fas fa-bars"></div>
     </header>
 
-    <section id="hero">
-        <div class="hero-background"></div>
-        <div class="hero-content">
-            <h1 class="animate-hero">Votre Rêve Immobilier Commence Ici</h1>
-            <p class="animate-hero">L'excellence et le prestige au cœur de Kénitra. Découvrez nos résidences.</p>
-            <a href="#biens" class="btn animate-hero">Découvrir nos biens</a>
-        </div>
-    </section>
+ <section id="hero">
+    <div class="hero-background">
+    <div class="scroll-down-mouse">
+        <div class="mouse-wheel"></div>
+    </div>
+    </div>
+</section>
+    
+    <div class="scroll-down-arrow"></div>
+</section>
 
  <div class="carousel-container">
         <div class="carousel-track">
@@ -62,16 +64,36 @@
             <div class="dual-layout-text">
                 <h2 class="section-title-left">Visualisez Votre Futur Espace</h2>
                 <h3>Des plans 3D immersifs pour une projection réelle.</h3>
-                <p>Chez Groupe Benis, nous croyons qu'un achat immobilier est avant tout un projet de vie. C'est pourquoi nous vous offrons la possibilité de vous immerger dans votre futur appartement grâce à des visualisations 3D ultra-réalistes.</p>
+                <p>Chez Groupe bennis, nous croyons qu'un achat immobilier est avant tout un projet de vie. C'est pourquoi nous vous offrons la possibilité de vous immerger dans votre futur appartement grâce à des visualisations 3D ultra-réalistes.</p>
                 <p>Explorez chaque pièce, appréciez les volumes et imaginez l'aménagement qui vous ressemble. Nos plans sont conçus pour vous aider à prendre la meilleure décision, en toute confiance.</p>
                 <a href="#contact" class="btn">Contacter un conseiller</a>
             </div>
 
-            <div class="dual-layout-gallery">
-                <img src="assets/images/tem1.jpg" alt="Plan 3D d'appartement moderne" class="gallery-img img-1">
-                <img src="assets/images/tem2.jpg" alt="Vue d'ensemble d'un plan d'appartement" class="gallery-img img-2">
-                <img src="assets/images/tem3.jpg" alt="Autre perspective de plan 3D" class="gallery-img img-3">
-            </div>
+          <div class="dual-layout-gallery">
+    <img src="assets/images/tem1.jpg" 
+         alt="Plan 3D d'appartement moderne" 
+         class="gallery-img img-1"
+         data-plan-2d="assets/plan/01.pdf">
+
+    <img src="assets/images/tem2.jpg" 
+         alt="Vue d'ensemble d'un plan d'appartement" 
+         class="gallery-img img-2"
+         data-plan-2d="assets/plan/3.pdf">
+
+    <img src="assets/images/tem3.jpg" 
+         alt="Autre perspective de plan 3D" 
+         class="gallery-img img-3"
+         data-plan-2d="assets/plan/03.pdf">
+</div>
+<div id="lightbox-overlay" class="lightbox-overlay">
+    <div class="lightbox-content">
+        <span id="lightbox-close" class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Aperçu du plan">
+        <a href="#" id="lightbox-plan-btn" class="btn btn-plan-2d" target="_blank" rel="noopener noreferrer">
+            VOIR LE PLAN 2D
+        </a>
+    </div>
+</div>
 
         </div>
     </div>
@@ -82,7 +104,7 @@
                 <div class="about-content">
                     <div class="about-text">
                         <h3>Plus qu'un promoteur, un créateur de lieux de vie.</h3>
-                        <p>Depuis notre création, Groupe Benis s'est engagé à redéfinir le paysage immobilier de Kénitra. Nous ne construisons pas seulement des bâtiments, nous créons des espaces de vie où confort, modernité et qualité se rencontrent.</p>
+                        <p>Depuis notre création, Groupe bennis s'est engagé à redéfinir le paysage immobilier de Kénitra. Nous ne construisons pas seulement des bâtiments, nous créons des espaces de vie où confort, modernité et qualité se rencontrent.</p>
                         <p>Notre expertise s'appuie sur une connaissance approfondie du marché local et une passion pour l'architecture innovante. Chaque projet est une promesse de satisfaction et un investissement pérenne pour nos clients.</p>
                     </div>
                     <div class="about-stats">
@@ -236,7 +258,7 @@
 
     <footer class="footer">
         <div class="container">
-          <p>&copy; 2025 Groupe Benis. Tous droits réservés. | Développeur <a href="https://www.facebook.com/FormateurInformatiqueMohamed/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Mohamed El Faquir</a></p>
+          <p>&copy; 2025 Groupe bennis. Tous droits réservés. | Développeur <a href="https://www.facebook.com/FormateurInformatiqueMohamed/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Mohamed El Faquir</a></p>
 
         </div>
     </footer>
