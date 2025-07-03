@@ -16,6 +16,126 @@
 
      <script src="https://cdn.tailwindcss.com"></script>
     
+     <style>
+/* ======== SECTION 1: PROFESSIONAL BANNER (AMÉLIORÉ) ======== */
+.professional-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 85vh;
+    padding: 60px 7%;
+    gap: 50px;
+    background-color: rgba(190,202,218,0.5);
+    overflow: hidden;
+    /* La marge est gérée par rapport à votre header existant */
+    margin-top: var(--header-height); 
+}
+
+/* --- Zone de texte à gauche --- */
+.banner-content-area {
+    flex: 1;
+    max-width: 600px;
+    z-index: 100;
+}
+
+/* Animation en cascade pour les éléments de texte */
+.banner-main-title, .banner-subtitle, .banner-content-area .btn {
+    opacity: 0;
+    transform: translateY(20px);
+    /* Animation douce avec une courbe de Bézier pour un effet naturel */
+    animation: slideUpFadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Décalage pour un effet d'apparition progressif */
+.banner-subtitle {
+    animation-delay: 0.2s;
+}
+.banner-content-area .btn {
+    animation-delay: 0.4s;
+}
+
+.banner-main-title {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.banner-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+/* --- Zone d'image à droite --- */
+.banner-image-area {
+    flex: 0 0 400px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0.95);
+    /* Animation d'apparition avec un délai */
+    animation: scaleUpFadeIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+}
+
+.banner-image-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Transition douce pour l'effet de survol */
+    transition: transform 0.4s ease-out;
+}
+
+/* Effet de survol professionnel sur l'image (desktop) */
+.banner-image-area:hover img {
+    transform: scale(1.05);
+}
+
+
+/* --- Keyframes pour les animations --- */
+@keyframes slideUpFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleUpFadeIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* --- Responsive pour tablettes et mobiles --- */
+@media (max-width: 991px) {
+    .professional-banner {
+        flex-direction: column;
+        text-align: center;
+        min-height: auto;
+        padding: 40px 7%;
+
+    }
+
+    .banner-image-area {
+        order: -1; /* Place l'image en haut sur mobile */
+        flex-basis: auto;
+        width: 100%;
+        max-width: 350px;
+        height: 450px;
+        margin-bottom: 30px;
+        /* Animation plus simple pour les mobiles */
+        animation: slideUpFadeIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    }
+    
+    .banner-main-title {
+        font-size: 2.5rem;
+    }
+}  </style>
 </head>
 <body>
 
@@ -31,11 +151,16 @@
         <div id="menu-btn" class="fas fa-bars"></div>
     </header>
 
- <section id="hero">
-    <div class="hero-background">
-    <div class="scroll-down-mouse">
-        <div class="mouse-wheel"></div>
+<section id="hero" class="professional-banner"  style="padding-top:10vh;">
+    <div class="banner-content-area">
+        <h1 class="banner-main-title">L'immobilier de prestige, réinventé pour vous</h1>
+        <p class="banner-subtitle">
+            Groupe Bennis vous accompagne dans la recherche de votre bien d'exception à Kénitra. Découvrez des appartements et villas où luxe, confort et modernité se rencontrent.
+        </p>
+        <a href="#biens" class="btn">Découvrir nos biens</a>
     </div>
+    <div class="banner-image-area">
+        <img src="assets/images/hero.jpg" alt="Villa moderne de luxe proposée par Groupe Bennis">
     </div>
 </section>
     
